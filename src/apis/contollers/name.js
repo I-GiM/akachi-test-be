@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
 
     if(findName) {
       return res.status(409).json({
-        status: 'eror',
+        status: 'error',
         message: 'User already exists. Try another name'
       })
     };
