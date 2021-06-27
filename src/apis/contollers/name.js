@@ -13,6 +13,13 @@ const createUser = async (req, res) => {
       })
     };
 
+    if(fullName === '') {
+      return res.status(422).json({
+        status: 'error',
+        message: 'Full name is required'
+      })
+    };
+
     const newUser = await users.create({
       fullName
     })
